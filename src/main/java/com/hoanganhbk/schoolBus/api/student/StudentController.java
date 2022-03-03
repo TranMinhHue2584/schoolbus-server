@@ -92,23 +92,23 @@ public class StudentController {
         //student = studentRepository.save(student);
         {
             //send email to phu huynh
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo(student.getEmailGrand());
-            message.setSubject("Tracking bus!");
-            String action = student.getStatus() == Status.ON_BUS ? "lên xe" : "xuống xe";
-            String now = DateUtil.format(new Date());
-            message.setText("Học sinh " + student.getFullName() + " đã " + action + " " + (bus != null ? bus.getCode() : "unknown") + " lúc " + now);
+            //SimpleMailMessage message = new SimpleMailMessage();
+            //message.setTo(student.getEmailGrand());
+           // message.setSubject("Tracking bus!");
+            //String action = student.getStatus() == Status.ON_BUS ? "lên xe" : "xuống xe";
+            //String now = DateUtil.format(new Date());
+            //message.setText("Học sinh " + student.getFullName() + " đã " + action + " " + (bus != null ? bus.getCode() : "unknown") + " lúc " + now);
             // Send Message!
-            this.emailSender.send(message);
+           // this.emailSender.send(message);
 
             
             //send email to hoc sinh
-            SimpleMailMessage message1 = new SimpleMailMessage();
-            message1.setTo(student.getEmailStudent());
-            message1.setSubject("Tracking bus!");
-            message1.setText("Ban vua " + action + " " + (bus != null ? bus.getCode() : "unknown") + " lúc " + now);
+            //SimpleMailMessage message1 = new SimpleMailMessage();
+            //message1.setTo(student.getEmailStudent());
+            //message1.setSubject("Tracking bus!");
+            //message1.setText("Ban vua " + action + " " + (bus != null ? bus.getCode() : "unknown") + " lúc " + now);
             // Send Message!
-            this.emailSender.send(message1);
+            //this.emailSender.send(message1);
             
         }
 
